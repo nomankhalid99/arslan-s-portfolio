@@ -10,13 +10,13 @@ const Skills: React.FC = () => {
 
     if (!container) return;
 
-    const scrollStep = 1; // Adjust the scroll step
-    const scrollSpeed = 20; // Adjust the scroll speed
+    const scrollStep = 1; 
+    const scrollSpeed = 20; 
 
     const scroll = () => {
       container.scrollLeft += scrollStep;
-      if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-        container.scrollLeft = 0; // Reset to the beginning
+      if (container.scrollLeft >= container.scrollWidth) {
+        container.scrollLeft = 0; 
       }
     };
 
@@ -51,14 +51,12 @@ const Skills: React.FC = () => {
             <Box
               ref={containerRef}
               className="md:h-[353px] h-[250px] w-full overflow-x-auto overflow-y-hidden"
-              // style={{ whiteSpace: "nowrap" }}
             >
               <Box className="md:w-[2600px] w-[1680px] gap-4 pt-2 ps-2 flex">
                 {skillsData.map((skill) => (
                   <Box
                     key={skill.id}
                     className="gradient-border p-6 flex flex-col items-center gap-3 bg-[#121212] md:h-[300px] h-[240px] md:w-[310px] w-[205px]"
-                    style={{ display: "inline-block" }}
                   >
                     <img
                       src={skill.img}
