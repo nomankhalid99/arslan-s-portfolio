@@ -1,0 +1,111 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.dev{
+  color: transparent;
+  animation: effect 5s linear infinite;
+}
+
+@keyframes effect {
+  0% {
+    background: linear-gradient(#e8112b, #000000);
+    -webkit-background-clip: text;
+  }
+  9% {
+    background: linear-gradient(#000000, #fcc201);
+    -webkit-background-clip: text;
+  }
+  18% {
+    background: linear-gradient(#fcc201, #e8112b);
+    -webkit-background-clip: text;
+  }
+  27% {
+    background: linear-gradient(#e8112b, #000000);
+    -webkit-background-clip: text;
+  }
+  36% {
+    background: linear-gradient(#000000, #fcc201);
+    -webkit-background-clip: text;
+  }
+  45% {
+    background: linear-gradient(#fcc201, #e8112b);
+    -webkit-background-clip: text;
+  }
+  54% {
+    background: linear-gradient(#e8112b, #000000);
+    -webkit-background-clip: text;
+  }
+  63% {
+    background: linear-gradient(#000000, #fcc201);
+    -webkit-background-clip: text;
+  }
+  72% {
+    background: linear-gradient(#fcc201, #e8112b);
+    -webkit-background-clip: text;
+  }
+  81% {
+    background: linear-gradient(#e8112b, #000000);
+    -webkit-background-clip: text;
+  }
+  90% {
+    background: linear-gradient(#000000, #fcc201);
+    -webkit-background-clip: text;
+  }
+  100% {
+    background: linear-gradient(#fcc201, #e8112b);
+    -webkit-background-clip: text;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom, #E8112B, #FCC201);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Add this to your styles.css or global.css */
+.gradient-border {
+  position: relative;
+  padding: 8px; /* Adjust padding as needed */
+  border-radius: 1rem; /* Adjust border-radius as needed */
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  z-index: 1;
+  background: linear-gradient(to right, #e8112b, #fcc201);
+  border-radius: inherit; /* Match the border-radius of the container */
+  padding: 1px; /* Adjust the thickness of the gradient border */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.gradient-border-bottom {
+  position: relative;
+  padding-bottom: 8px; 
+}
+
+.gradient-border-bottom::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  z-index: 1;
+  background: linear-gradient(to right, #e8112b, #fcc201);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
