@@ -1,7 +1,30 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { useEffect, useRef } from "react";
 import { skillsData } from "../../data";
 
 const Skills: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    if (!container) return;
+
+    const scrollStep = 1; 
+    const scrollSpeed = 20; 
+
+    const scroll = () => {
+      container.scrollLeft += scrollStep;
+      if (container.scrollLeft >= container.scrollWidth) {
+        container.scrollLeft = 0; 
+      }
+    };
+
+    const interval = setInterval(scroll, scrollSpeed);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Box id="skills" className="bg-[#0D0D0D] py-16">
       <Box className="w-5/6 mx-auto">
@@ -24,11 +47,17 @@ const Skills: React.FC = () => {
               </Typography>
             </Box>
           </Grid>
-          <Box className="mt-10 md:h-[353px] h-[20px] w-full overflow-x-auto overflow-y-hidden">
-            <Box  className="md:w-[2600px] w-[1680px] gap-4 pt-2 ps-2 flex">
-              {skillsData.map((skill) => (
-                // <Grid key={skill.id} item lg={3} md={4} sm={6} xs={12}>
-                  <Box className="gradient-border p-6 flex flex-col items-center gap-3 bg-[#121212] md:h-[300px] h-[240px] md:w-[310px] w-[205px]">
+          <Box className="relative mt-10 md:h-[353px] h-[250px] w-full">
+            <Box
+              ref={containerRef}
+              className="md:h-[353px] h-[250px] w-full overflow-x-auto overflow-y-hidden"
+            >
+              <Box className="md:w-[2600px] w-[1680px] gap-4 pt-2 ps-2 flex">
+                {skillsData.map((skill) => (
+                  <Box
+                    key={skill.id}
+                    className="gradient-border p-6 flex flex-col items-center gap-3 bg-[#121212] md:h-[300px] h-[240px] md:w-[310px] w-[205px]"
+                  >
                     <img
                       src={skill.img}
                       alt={skill.name}
@@ -47,8 +76,8 @@ const Skills: React.FC = () => {
                       {skill.name}
                     </Typography>
                   </Box>
-                // </Grid>
-              ))}
+                ))}
+              </Box>
             </Box>
           </Box>
         </Grid>
