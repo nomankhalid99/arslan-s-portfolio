@@ -1,5 +1,6 @@
 import { Mail, Phone } from "@mui/icons-material";
 import { Box, Grid, Typography, Button, TextField } from "@mui/material";
+import emailjs from "emailjs-com";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 interface IFormInput {
@@ -14,9 +15,22 @@ const ContactUs: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInput>();
+
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data);
+    const serviceID = "service_0hjmpyc";
+    const templateID = "template_khtc01n";
+    const userID = "5N5PRMQLi1nsQSlK4";
+
+    emailjs.send(serviceID, templateID, data as unknown as Record<string, unknown>, userID)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert("Message sent successfully!");
+      }, (err) => {
+        console.log('FAILED...', err);
+        alert("Failed to send message. Please try again later.");
+      });
   };
+
   return (
     <Box id="contact" className="bg-[#0D0D0D] relative py-16">
       <Box className="w-5/6 mx-auto">
@@ -55,9 +69,9 @@ const ContactUs: React.FC = () => {
                     borderColor: "rgb(107 114 128)",
                     borderRadius: "16px",
                     color: "rgb(156 163 175)",
-                },
-                "&:hover fieldset": {
-                      color: "rgb(156 163 175)",
+                  },
+                  "&:hover fieldset": {
+                    color: "rgb(156 163 175)",
                     borderColor: "rgb(107 114 128)",
                   },
                   "&.Mui-focused fieldset": {
@@ -129,10 +143,9 @@ const ContactUs: React.FC = () => {
             xs={12}
             className="flex justify-center items-center "
           >
-            <Box  className="flex flex-col gap-6 md:mt-0 mt-6">
+            <Box className="flex flex-col gap-6 md:mt-0 mt-6">
               <Box className="flex gap-3 items-center">
                 <Box>
-                  {" "}
                   <Phone
                     sx={{
                       fontSize: { sm: 50, xs: 40 },
@@ -152,7 +165,6 @@ const ContactUs: React.FC = () => {
               </Box>
               <Box className="flex gap-3 items-center">
                 <Box>
-                  {" "}
                   <Mail
                     sx={{
                       fontSize: { sm: 50, xs: 40 },

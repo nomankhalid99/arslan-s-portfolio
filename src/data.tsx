@@ -78,9 +78,10 @@ interface SkillsData {
     },
     {
       id: 3,
-      img: "../src/assets/skills/JS.svg",
-      percent: "60%",
-      name: "Javascript",
+      img: "../src/assets/skills/laravel.svg",
+      percent: "75%",
+      name: "Laravel",
+      
     },
     {
       id: 4,
@@ -108,9 +109,9 @@ interface SkillsData {
     },
     {
       id: 8,
-      img: "../src/assets/skills/laravel.svg",
-      percent: "75%",
-      name: "Laravel",
+      img: "../src/assets/skills/JS.svg",
+      percent: "60%",
+      name: "Javascript",
     },
   ];
 
