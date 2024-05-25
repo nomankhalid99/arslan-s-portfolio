@@ -92,8 +92,8 @@ const HeroSection: React.FC = () => {
           >
             <Box className="rotate-6 relative bg-gradient-to-b from-[#E8112B] to-yellow-500 md:h-[448.09px] sm:h-[350px] h-[280px] md:w-[420.03px] sm:w-[350px] w-[280px] md:mt-9 -mt-5 overflow-hidden rounded-3xl">
               <img
-                // src="../src/assets/IMg.png"
-                className="-rotate-6 object-fit absolute -bottom-4"
+                src="../src/assets/Img.png"
+                className="-rotate-6 object-fit absolute -bottom-28"
                 alt="IMG"
               />
             </Box>
