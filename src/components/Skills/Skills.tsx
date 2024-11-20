@@ -34,7 +34,7 @@ const Skills: React.FC = () => {
               <Typography
                 fontSize={{ sm: 50, xs: 40 }}
                 fontWeight={700}
-                className="gradient-text"
+                className="text-[#FFAA00]"
               >
                 Top Skills
               </Typography>
@@ -42,7 +42,7 @@ const Skills: React.FC = () => {
                 fontSize={{ sm: 18, xs: 16 }}
                 className="text-neutral-400"
               >
-                Explore the diverse skill set that powers my innovative and
+                Explore the diverse skill set that powers innovative and
                 effective solutions.
               </Typography>
             </Box>
@@ -61,11 +61,11 @@ const Skills: React.FC = () => {
                     <img
                       src={skill.img}
                       alt={skill.name}
-                      className="object-contain sm:h-36 h-24"
+                      className="object-contain h-24 sm:h-36"
                     />
                     <Typography
                       fontSize={{ sm: 30, xs: 25 }}
-                      className="text-orange-600"
+                      className="text-[#FFAA00]"
                     >
                       {skill.percent}
                     </Typography>

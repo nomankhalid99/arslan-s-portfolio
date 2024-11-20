@@ -2,16 +2,16 @@ import { Box, Grid, Typography } from "@mui/material";
 
 const Statistics: React.FC = () => {
   return (
-    <Box className="w-4/5 relative mx-auto bg-[#121212] p-6 mt-16">
+    <Box className="w-5/6  relative mx-auto bg-[#121212] p-6 z-50">
       <Grid container>
-        <Grid item lg={4} md={6} xs={12}>
-          <Box className="flex gap-2 items-center ms-5 md:justify-start justify-center">
+        <Grid item lg={4} md={4} sm={6} xs={12}>
+          <Box className="flex items-center justify-center gap-2 ms-5 md:justify-start">
             <Typography
               fontSize={{sm:70,xs:50}}
               fontWeight={500}
-              className="gradient-text"
+              className="text-white"
             >
-              4
+              10
             </Typography>
             <Typography
               fontSize={{sm:18,xs:14}}
@@ -22,14 +22,14 @@ const Statistics: React.FC = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item lg={4} md={6}  xs={12}>
-          <Box className="flex gap-2 items-center md:justify-start justify-center">
+        <Grid item lg={4} md={4} sm={6}  xs={12}>
+          <Box className="flex items-center justify-center gap-2 md:justify-start">
             <Typography
               fontSize={{sm:70, xs:50}}
               fontWeight={500}
-              className="gradient-text"
+              className="text-white"
             >
-              50+
+              200+
             </Typography>
             <Typography
               fontSize={{sm:18,xs:14}}
@@ -40,14 +40,14 @@ const Statistics: React.FC = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item md={4}  xs={12}>
-          <Box className="flex gap-2 items-center md:justify-start justify-center">
+        <Grid item md={4} sm={6}  xs={12}>
+          <Box className="flex items-center justify-center gap-2 md:justify-start">
             <Typography
               fontSize={{sm:70, xs:50}}
               fontWeight={500}
-              className="gradient-text"
+              className="text-white"
             >
-              1.4k
+              150
             </Typography>
             <Typography
               fontSize={{sm:18,xs:14}}

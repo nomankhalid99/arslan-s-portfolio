@@ -9,19 +9,19 @@ const Services: React.FC = () => {
         <Typography
           fontSize={{ sm: 50, xs: 40 }}
           fontWeight={700}
-          className="gradient-text"
+          className="text-[#FFAA00]"
         >
-          Qualities Services
+         How can we help you?
         </Typography>
         <Typography
           fontSize={{ sm: 18, xs: 14 }}
-          className="text-neutral-500 p-2"
+          className="p-2 text-neutral-500"
         >
-          Discover my comprehensive range of web development services tailored
+          Discover comprehensive range of services tailored
           to meet your business needs and drive growth.
         </Typography>
       </Box>
-      <Box className="mt-10 flex flex-col gap-5">
+      <Box className="flex flex-col gap-5 mt-10">
         {services.map((service) => (
           <Box
             key={service.id}
@@ -44,7 +44,7 @@ const Services: React.FC = () => {
                 {service.description}
               </Typography>
             </Box>
-            <Box className="md:block hidden">{service.icon}</Box>
+            <Box className="hidden md:block">{service.icon}</Box>
           </Box>
         ))}
       </Box>

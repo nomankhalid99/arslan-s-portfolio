@@ -1,7 +1,6 @@
 import './App.css'
 import About from './components/About/About'
 import ContactUs from './components/ContactUs/ContactUs'
-import ExpEdu from './components/Exp-Edu/ExpEdu'
 import Footer from './components/Footer/Footer'
 import HeroSection from './components/Herosection/HeroSection'
 import Navbar from './components/Navbar/Navbar'
@@ -19,7 +18,6 @@ function App() {
     <About/>
     <Services/>
     <Portfolio/>
-    <ExpEdu/>
     <Skills/>
     <Testimonials/>
     <ContactUs/>

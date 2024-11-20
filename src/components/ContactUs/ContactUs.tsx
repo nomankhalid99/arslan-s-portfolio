@@ -17,18 +17,27 @@ const ContactUs: React.FC = () => {
   } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    const serviceID = "service_0hjmpyc";
-    const templateID = "template_khtc01n";
+    const serviceID = "service_329j2l8";
+    const templateID = "template_5hlxqe1";
     const userID = "5N5PRMQLi1nsQSlK4";
 
-    emailjs.send(serviceID, templateID, data as unknown as Record<string, unknown>, userID)
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        alert("Message sent successfully!");
-      }, (err) => {
-        console.log('FAILED...', err);
-        alert("Failed to send message. Please try again later.");
-      });
+    emailjs
+      .send(
+        serviceID,
+        templateID,
+        data as unknown as Record<string, unknown>,
+        userID
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message sent successfully!");
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          alert("Failed to send message. Please try again later.");
+        }
+      );
   };
 
   return (
@@ -40,7 +49,7 @@ const ContactUs: React.FC = () => {
               <Typography
                 fontSize={{ sm: 50, xs: 40 }}
                 fontWeight={700}
-                className="gradient-text"
+                className="text-[#FFAA00]"
               >
                 Let's work together!
               </Typography>
@@ -48,7 +57,8 @@ const ContactUs: React.FC = () => {
                 fontSize={{ sm: 18, xs: 16 }}
                 className="text-neutral-400"
               >
-               Get in touch with me today to discuss your project and how I can help bring your vision to life
+                Get in touch with me today to discuss your project and how I can
+                help bring your vision to life
               </Typography>
             </Box>
             <Box
@@ -122,36 +132,29 @@ const ContactUs: React.FC = () => {
                 fullWidth
               />
 
-              <Button
+              <button
                 type="submit"
-                sx={{
-                  color: "black",
-                  fontWeight: 600,
-                  borderRadius: "16px",
-                  py: 2,
-                  mt: 3,
-                }}
-                className="bg-gradient-to-b from-[#E8112B] to-[#FCC201]"
+                className="bg-[#FCC201] text-black font-semibold rounded-2xl py-4 mt-3"
               >
                 Send Message
-              </Button>
+              </button>
             </Box>
           </Grid>
           <Grid
             item
             md={6}
             xs={12}
-            className="flex justify-center items-center "
+            className="flex items-center justify-center "
           >
-            <Box className="flex flex-col gap-6 md:mt-0 mt-6">
-              <Box className="flex gap-3 items-center">
+            <Box className="flex flex-col gap-6 mt-6 md:mt-0">
+              <Box className="flex items-center gap-3">
                 <Box>
                   <Phone
                     sx={{
                       fontSize: { sm: 50, xs: 40 },
                       fontWeight: 700,
                     }}
-                    className="bg-gradient-to-b from-[#E8112B] to-[#FCC201] p-2 rounded-full"
+                    className="bg-[#FCC201] p-2 rounded-full"
                   />
                 </Box>
                 <Box className="flex flex-col gap-1">
@@ -163,14 +166,14 @@ const ContactUs: React.FC = () => {
                   </Typography>
                 </Box>
               </Box>
-              <Box className="flex gap-3 items-center">
+              <Box className="flex items-center gap-3">
                 <Box>
                   <Mail
                     sx={{
                       fontSize: { sm: 50, xs: 40 },
                       fontWeight: 700,
                     }}
-                    className="bg-gradient-to-b from-[#E8112B] to-[#FCC201] p-2 rounded-full"
+                    className="bg-[#FCC201] p-2 rounded-full"
                   />
                 </Box>
                 <Box className="flex flex-col gap-1">
@@ -178,7 +181,7 @@ const ContactUs: React.FC = () => {
                     Mail
                   </Typography>
                   <Typography fontSize={14} className="text-white">
-                    devarslan99@gmail.com
+                    devsleader@gmail.com
                   </Typography>
                 </Box>
               </Box>

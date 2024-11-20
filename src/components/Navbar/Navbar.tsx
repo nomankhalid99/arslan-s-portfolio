@@ -3,7 +3,6 @@ import {
   Box,
   IconButton,
   Link,
-  Typography,
   useMediaQuery,
 } from "@mui/material";
 import { useState } from "react";
@@ -13,22 +12,22 @@ const Navbar: React.FC = () => {
   const mobileView = useMediaQuery("(min-width:920px)");
 
   return (
-    <Box className="bg-[#0D0D0D] p-3">
-      <Box className="sm:w-5/6 w-11/12 mx-auto">
+    <Box className="absolute z-50 w-full p-3 ">
+      <Box className="w-11/12 mx-auto sm:w-5/6">
         <Box display="flex" justifyContent="space-between">
           <Box display="flex" gap={2} alignItems="center">
             <img
-              src="../src/assets/Logo.svg"
-              className="h-[69px] w-[74px]"
+              src="../src/assets/Logo.png"
+              className="md:h-[49px] h-[30px]"
               alt="LOGO"
             />
-            {mobileView ? (
+            {/* {mobileView ? (
               <Typography className="text-neutral-400">
                 devarslan99@gmail.com
               </Typography>
             ) : (
               ""
-            )}
+            )} */}
           </Box>
           {mobileView ? (
             <Box display="flex" gap={4} alignItems="center">
@@ -66,15 +65,16 @@ const Navbar: React.FC = () => {
                   textDecoration: "none",
                   color: "black",
                   fontWeight: "bold",
+                  // background: "linear-gradient(90deg, rgba(48,48,48,1) 0%, rgba(255,170,0,1) 26%)"
                 }}
-                className="bg-gradient-to-b from-orange-600 to-yellow-500 p-2 rounded-md"
+                className="py-2 px-5 rounded-md bg-[#FFAA00]"
               >
                 Contact
               </Link>
             </Box>
           ) : (
             <IconButton onClick={() => setToggleMenu(!toggleMenu)}>
-              <Menu className="text-2xl text-orange-600 self-center" />
+              <Menu className="self-center text-2xl text-[#FFAA00]" />
             </IconButton>
           )}
         </Box>
@@ -87,6 +87,8 @@ const Navbar: React.FC = () => {
             gap={3}
             alignItems="flex-start"
             fontSize={16}
+            bgcolor={'#000000'}
+            p={3}
           >
             <Link
               href="#services"
@@ -120,7 +122,7 @@ const Navbar: React.FC = () => {
             <Link
               href="#contact"
               style={{ textDecoration: "none", color: "black" }}
-              className="bg-gradient-to-b from-[#E8112B] to-yellow-500 p-2 rounded-md"
+              className="bg-[#FFAA00] p-2 rounded-md"
               onClick={() => setToggleMenu(!toggleMenu)}
             >
               Contact

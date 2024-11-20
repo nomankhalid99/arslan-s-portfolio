@@ -242,24 +242,48 @@ interface SkillsData {
     icon:ReactElement
   }
 
-  export const services : ServicesProps[] =[
+  export const services: ServicesProps[] = [
     {
-      id:1,
-      service:"Web Application Development",
-      description:"Transform your ideas into powerful, interactive web applications with our comprehensive development services. Utilizing the MERN stack, we build robust, scalable, and user-friendly applications that meet your business needs and enhance user engagement.",
-      icon: <CallMade className="text-white" />
+      id: 1,
+      service: "Web Application Development",
+      description:
+        "Transform ideas into powerful, interactive web applications with comprehensive development services. Utilizing the MERN stack, robust, scalable, and user-friendly applications are created to meet business needs and enhance user engagement.",
+      icon: <CallMade className="text-white" />,
+    },
+    // {
+    //   id: 2,
+    //   service: "API Development & Integration",
+    //   description:
+    //     "Seamlessly connect applications with custom APIs designed to improve functionality and data exchange. Expertise in Node.js and Express.js ensures efficient, secure, and scalable API solutions tailored to specific requirements.",
+    //   icon: <SouthEast className="hidden text-white md:block" />,
+    // },
+    // {
+    //   id: 3,
+    //   service: "Frontend Design & Development",
+    //   description:
+    //     "Create visually appealing and highly responsive interfaces with frontend design and development services. Leveraging the power of React, intuitive user experiences are delivered that engage and retain audiences while reflecting brand identity.",
+    //   icon: <SouthEast className="hidden text-white md:block" />,
+    // },
+    {
+      id: 4,
+      service: "Machine Learning Model Development",
+      description:
+        "Design and implement machine learning models to extract insights, predict trends, and optimize decision-making. Advanced algorithms and frameworks are utilized to build solutions tailored to diverse business challenges.",
+        icon: <SouthEast className="hidden text-white md:block" />,
     },
     {
-      id:2,
-      service:"API Development & Integration",
-      description:"Seamlessly connect your applications with custom APIs designed to improve functionality and data exchange. Our expertise in Node.js and Express.js ensures efficient, secure, and scalable API solutions tailored to your specific requirements.",
-      icon:  <SouthEast className="text-white md:block hidden" />
+      id: 5,
+      service: "Chatbot Development",
+      description:
+        "Develop intelligent chatbots that automate tasks, enhance customer engagement, and provide 24/7 support. Using natural language processing and AI, efficient and user-friendly conversational solutions are created for various industries.",
+      icon: <SouthEast className="hidden text-white md:block" />,
     },
     {
-      id:3,
-      service:"Frontend Design & Development",
-      description:"Create visually appealing and highly responsive interfaces with our frontend design and development services. Leveraging the power of React, we deliver intuitive user experiences that engage and retain your audience while reflecting your brand’s identity.",
-      icon:  <SouthEast className="text-white md:block hidden" />
+      id: 6,
+      service: "Telegram Game Chatbot Development",
+      description:
+        "Create interactive and engaging game-based chatbots for Telegram. With custom game logic and seamless integration, chatbots offer users an entertaining experience while driving engagement and user retention.",
+        icon: <SouthEast className="hidden text-white md:block" />,
     },
-  ]
-
+  ];
+  
