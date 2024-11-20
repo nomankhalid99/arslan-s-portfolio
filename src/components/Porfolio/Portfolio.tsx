@@ -1,21 +1,7 @@
-import { useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { data } from "../../data"; // Make sure data is properly imported
 
 const Portfolio: React.FC = () => {
-  // const [visibleItems, setVisibleItems] = useState(6);
-  // const [isExpanded, setIsExpanded] = useState(false);
-
-  // const handleToggleView = () => {
-  //   console.log("Before toggle: ", visibleItems, isExpanded);
-  //   if (isExpanded) {
-  //     setVisibleItems(6);
-  //   } else {
-  //     setVisibleItems(data.length);
-  //   }
-  //   setIsExpanded(!isExpanded);
-  //   console.log("After toggle: ", visibleItems, isExpanded);
-  // };
 
   return (
     <Box id="portfolio" className="bg-[#0D0D0D] relative py-16">
@@ -60,14 +46,6 @@ const Portfolio: React.FC = () => {
             </Grid>
           ))}
         </Grid>
-        {/* <Box textAlign="center" mt={4}>
-          <button
-            className="px-5 py-2 font-bold bg-yellow-500 rounded-md cursor-pointer"
-            // onClick={handleToggleView}
-          >
-            {isExpanded ? "View Less" : "View More"}
-          </button>
-        </Box> */}
       </Box>
     </Box>
   );

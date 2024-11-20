@@ -39,19 +39,21 @@ const HeroSection: React.FC = () => {
               <Box className="relative z-10 w-5/6 mx-auto">
                 <Box className="flex flex-col items-start w-full gap-3 md:gap-5 md:w-1/2">
                   <Typography
-                    variant=""
+                    variant="h6"
+                    fontWeight={"bold"}
                     className="text-xl font-bold text-white md:text-2xl"
                   >
                     Fastest And Most Lightweight WP Theme
                   </Typography>
                   <Typography
-                    variant=""
+                    variant="h2"
+                    fontWeight={"bold"}
                     className="text-4xl font-bold leading-snug text-white md:text-6xl font-poppins"
                   >
                     Create Amazing Business Websites
                   </Typography>
                   <Typography
-                    variant=""
+                    variant="body1"
                     className="text-base text-neutral-300 font-poppins"
                   >
                     Build professional and responsive websites tailored to your
@@ -101,19 +103,21 @@ const HeroSection: React.FC = () => {
               <Box className="relative z-10 flex justify-end w-5/6 mx-auto">
                 <Box className="flex flex-col items-start w-full gap-3 md:gap-5 md:w-1/2">
                   <Typography
-                    variant=""
+                    variant="h6"
+                    fontWeight={"bold"}
                     className="text-xl font-bold text-white md:text-2xl"
                   >
                     Power Your Solutions with Machine Learning
                   </Typography>
                   <Typography
-                    variant=""
+                    variant="h2"
+                    fontWeight={"bold"}
                     className="text-4xl font-bold leading-snug text-white md:text-6xl font-poppins"
                   >
                     Transform Data Into Insights
                   </Typography>
                   <Typography
-                    variant=""
+                    variant="body1"
                     className="text-base text-neutral-300 font-poppins"
                   >
                     Leverage predictive analytics and cutting-edge algorithms to
@@ -163,19 +167,21 @@ const HeroSection: React.FC = () => {
               <Box className="relative z-10 w-5/6 mx-auto">
                 <Box className="flex flex-col items-start w-full gap-3 md:gap-5 md:w-1/2">
                   <Typography
-                    variant=""
+                       variant="h6"
+                       fontWeight={"bold"}
                     className="text-xl font-bold text-white md:text-2xl"
                   >
                     Revolutionize Customer Interaction
                   </Typography>
                   <Typography
-                    variant=""
+                  variant="h2"
+                  fontWeight={"bold"}
                     className="text-4xl font-bold leading-snug text-white md:text-6xl font-poppins"
                   >
                     Intelligent Chatbot Solutions
                   </Typography>
                   <Typography
-                    variant=""
+                      variant="body1"
                     className="text-base text-neutral-300 font-poppins"
                   >
                     Deliver 24/7 customer support, automate responses, and
