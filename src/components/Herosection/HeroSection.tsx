@@ -1,4 +1,4 @@
-import {  Box, Typography, Link } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import Statistics from "./Statistics";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -6,6 +6,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const HeroSection: React.FC = () => {
   return (
@@ -17,7 +19,7 @@ const HeroSection: React.FC = () => {
               sx={{
                 height: "100vh",
                 backgroundImage:
-                  'url("https://img.freepik.com/free-photo/employee-showing-appreciation-each-other_23-2149357542.jpg?t=st=1732107022~exp=1732110622~hmac=6ae3b0035f796ddd7a531ed167b6426c3c83afd0846ac0d5a3b57e66e5c73716&w=1380")',
+                  'url("https://img.freepik.com/free-photo/employee-showing-appreciation-each-other_23-2149357542.jpg")',
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 display: "flex",
@@ -32,46 +34,18 @@ const HeroSection: React.FC = () => {
                   left: 0,
                   width: "100%",
                   height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.7)", // Adjust alpha for desired transparency
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
                   zIndex: 1,
                 }}
               />
               <Box className="relative z-10 w-5/6 mx-auto">
-                <Box className="flex flex-col items-start w-full gap-3 md:gap-5 md:w-1/2">
-                  <Typography
-                    variant="h6"
-                    fontWeight={"bold"}
-                    className="text-xl font-bold text-white md:text-2xl"
-                  >
-                    Fastest And Most Lightweight WP Theme
-                  </Typography>
-                  <Typography
-                    variant="h2"
-                    fontWeight={"bold"}
-                    className="text-4xl font-bold leading-snug text-white md:text-6xl font-poppins"
-                  >
-                    Create Amazing Business Websites
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    className="text-base text-neutral-300 font-poppins"
-                  >
-                    Build professional and responsive websites tailored to your
-                    business needs. Engage your audience with sleek designs,
-                    powerful functionality, and user-friendly experiences.  
-                  </Typography>
-                  <Link
-                    href="#contact"
-                    style={{
-                      textDecoration: "none",
-                      color: "black",
-                      fontWeight: "bold",
-                    }}
-                    className="py-3 px-7 rounded-md bg-[#FFAA00]"
-                  >
-                    Get Started
-                  </Link>
-                </Box>
+                <HeroContent
+                  title="Fastest And Most Lightweight WP Theme"
+                  description="Create Amazing Business Websites"
+                  body="Build professional and responsive websites tailored to your business needs. Engage your audience with sleek designs, powerful functionality, and user-friendly experiences."
+                  link="#contact"
+                  linkText="Get Started"
+                />
               </Box>
             </Box>
           </SwiperSlide>
@@ -84,7 +58,6 @@ const HeroSection: React.FC = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 display: "flex",
-                // flexDirection: "column",
                 justifyContent: "flex-end",
                 alignItems: "center",
               }}
@@ -96,46 +69,18 @@ const HeroSection: React.FC = () => {
                   left: 0,
                   width: "100%",
                   height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.7)", // Adjust alpha for desired transparency
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
                   zIndex: 1,
                 }}
               />
               <Box className="relative z-10 flex justify-end w-5/6 mx-auto">
-                <Box className="flex flex-col items-start w-full gap-3 md:gap-5 md:w-1/2">
-                  <Typography
-                    variant="h6"
-                    fontWeight={"bold"}
-                    className="text-xl font-bold text-white md:text-2xl"
-                  >
-                    Power Your Solutions with Machine Learning
-                  </Typography>
-                  <Typography
-                    variant="h2"
-                    fontWeight={"bold"}
-                    className="text-4xl font-bold leading-snug text-white md:text-6xl font-poppins"
-                  >
-                    Transform Data Into Insights
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    className="text-base text-neutral-300 font-poppins"
-                  >
-                    Leverage predictive analytics and cutting-edge algorithms to
-                    uncover trends, improve decision-making, and drive
-                    innovation across your projects.
-                  </Typography>
-                  <Link
-                    href="#contact"
-                    style={{
-                      textDecoration: "none",
-                      color: "black",
-                      fontWeight: "bold",
-                    }}
-                    className="py-3 px-7 rounded-md bg-[#FFAA00]"
-                  >
-                    Get Started
-                  </Link>
-                </Box>
+                <HeroContent
+                  title="Transform Data Into Insights"
+                  description="Power Your Solutions with Machine Learning"
+                  body="Leverage predictive analytics and cutting-edge algorithms to uncover trends, improve decision-making, and drive innovation across your projects."
+                  link="#contact"
+                  linkText="Get Started"
+                />
               </Box>
             </Box>
           </SwiperSlide>
@@ -160,46 +105,18 @@ const HeroSection: React.FC = () => {
                   left: 0,
                   width: "100%",
                   height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjust alpha for desired transparency
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
                   zIndex: 1,
                 }}
               />
               <Box className="relative z-10 w-5/6 mx-auto">
-                <Box className="flex flex-col items-start w-full gap-3 md:gap-5 md:w-1/2">
-                  <Typography
-                       variant="h6"
-                       fontWeight={"bold"}
-                    className="text-xl font-bold text-white md:text-2xl"
-                  >
-                    Revolutionize Customer Interaction
-                  </Typography>
-                  <Typography
-                  variant="h2"
-                  fontWeight={"bold"}
-                    className="text-4xl font-bold leading-snug text-white md:text-6xl font-poppins"
-                  >
-                    Intelligent Chatbot Solutions
-                  </Typography>
-                  <Typography
-                      variant="body1"
-                    className="text-base text-neutral-300 font-poppins"
-                  >
-                    Deliver 24/7 customer support, automate responses, and
-                    engage users seamlessly using advanced natural language
-                    processing and AI-powered bots.
-                  </Typography>
-                  <Link
-                    href="#contact"
-                    style={{
-                      textDecoration: "none",
-                      color: "black",
-                      fontWeight: "bold",
-                    }}
-                    className="py-3 px-7 rounded-md bg-[#FFAA00]"
-                  >
-                    Get Started
-                  </Link>
-                </Box>
+                <HeroContent
+                  title="Revolutionize Customer Interaction"
+                  description="Intelligent Chatbot Solutions"
+                  body="Deliver 24/7 customer support, automate responses, and engage users seamlessly using advanced natural language processing and AI-powered bots."
+                  link="#contact"
+                  linkText="Get Started"
+                />
               </Box>
             </Box>
           </SwiperSlide>
@@ -207,6 +124,84 @@ const HeroSection: React.FC = () => {
         <Statistics />
       </Box>
     </Box>
+  );
+};
+
+interface HeroContentProps {
+  title: string;
+  description: string;
+  body: string;
+  link: string;
+  linkText: string;
+}
+
+const HeroContent: React.FC<HeroContentProps> = ({
+  title,
+  description,
+  body,
+  link,
+  linkText,
+}) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  return (
+    <motion.div
+      className="flex flex-col items-start w-full gap-3 md:gap-5 md:w-1/2"
+      ref={ref}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+      >
+        <Typography
+          variant="h6"
+          fontWeight={"bold"}
+          className="text-xl font-bold text-white md:text-2xl"
+        >
+          {title}
+        </Typography>
+      </motion.div>
+      <motion.h1
+        initial={{ opacity: 0, x: -50 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 1 }}
+        className="text-4xl font-bold leading-snug text-white md:text-6xl font-poppins"
+      >
+        {description}
+      </motion.h1>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : {}}
+        transition={{ delay: 0.5, duration: 0.8 }}
+      >
+        <Typography
+          variant="body1"
+          className="text-base text-neutral-300 font-poppins"
+        >
+          {body}
+        </Typography>
+      </motion.div>
+      <motion.div
+      className="mt-5"
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : {}}
+        transition={{ delay: 0.7, duration: 0.8 }}
+      >
+        <Link
+          href={link}
+          style={{
+            textDecoration: "none",
+            color: "black",
+            fontWeight: "bold",
+          }}
+          className="py-3 px-7 rounded-md bg-[#FFAA00]"
+        >
+          {linkText}
+        </Link>
+      </motion.div>
+    </motion.div>
   );
 };
 

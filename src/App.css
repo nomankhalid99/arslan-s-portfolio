@@ -61,7 +61,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(to bottom, #E8112B, #FCC201);
+  background: linear-gradient(to bottom, #ffffff, #FCC201);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -81,7 +81,7 @@ body {
   right: -1px;
   bottom: -1px;
   z-index: 1;
-  background: linear-gradient(to right, #e8112b, #fcc201);
+  background: linear-gradient(to right, #ffffff, #fcc201);
   border-radius: inherit; /* Match the border-radius of the container */
   padding: 1px; /* Adjust the thickness of the gradient border */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -102,7 +102,7 @@ body {
   bottom: 0;
   height: 1px;
   z-index: 1;
-  background: linear-gradient(to right, #e8112b, #fcc201);
+  background: linear-gradient(to right, #ffffff, #fcc201);
 }
 
 ::-webkit-scrollbar {

@@ -1,193 +1,82 @@
-import { Mail, Phone } from "@mui/icons-material";
-import { Box, Grid, Typography,  TextField } from "@mui/material";
-import emailjs from "emailjs-com";
-import { useForm, SubmitHandler } from "react-hook-form";
-
-interface IFormInput {
-  name: string;
-  email: string;
-  message: string;
-}
+import { Box, Grid, Typography } from "@mui/material";
+import { useEffect, useRef } from "react"; // Import useEffect for script loading
+import { motion, useInView } from "framer-motion"; // Impor
 
 const ContactUs: React.FC = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<IFormInput>();
+  // Load Calendly script dynamically
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script); // Cleanup the script when component unmounts
+    };
+  }, []);
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    const serviceID = "service_329j2l8";
-    const templateID = "template_5hlxqe1";
-    const userID = "5N5PRMQLi1nsQSlK4";
+  const headingRef = useRef(null);
+  const paragraphRef = useRef(null);
 
-    emailjs
-      .send(
-        serviceID,
-        templateID,
-        data as unknown as Record<string, unknown>,
-        userID
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully!");
-        },
-        (err) => {
-          console.log("FAILED...", err);
-          alert("Failed to send message. Please try again later.");
-        }
-      );
-  };
+  // Use the useInView hook to track when the elements are in view
+  const isHeadingInView = useInView(headingRef, { once: true });
+  const isParagraphInView = useInView(paragraphRef, { once: true });
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
 
   return (
     <Box id="contact" className="bg-[#0D0D0D] relative py-16">
       <Box className="w-5/6 mx-auto">
         <Grid container>
-          <Grid item md={6} xs={12}>
-            <Box textAlign="center" mb={4}>
-              <Typography
-                fontSize={{ sm: 50, xs: 40 }}
-                fontWeight={700}
-                className="text-[#FFAA00]"
+          <Grid item xs={12}>
+            <Box textAlign="center">
+              <motion.div
+                ref={headingRef} // Attach the ref to track this element
+                initial={{ opacity: 0, y: -50 }}
+                animate={isHeadingInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8 }}
               >
-                Let's work together!
-              </Typography>
-              <Typography
-                fontSize={{ sm: 18, xs: 16 }}
-                className="text-neutral-400"
+                <Typography
+                  fontSize={{ sm: 50, xs: 40 }}
+                  fontWeight={700}
+                  className="text-[#FFAA00]"
+                >
+                  Let's work together!
+                </Typography>
+              </motion.div>
+              <motion.div
+                ref={paragraphRef} // Attach the ref to track this element
+                initial={{ opacity: 0 }}
+                animate={isParagraphInView ? { opacity: 1 } : {}}
+                transition={{ delay: 0.3, duration: 1 }}
               >
-                Get in touch with me today to discuss your project and how I can
-                help bring your vision to life
-              </Typography>
-            </Box>
-            <Box
-              component="form"
-              onSubmit={handleSubmit(onSubmit)}
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 2,
-                width: "100%",
-                maxWidth: 500,
-                mx: "auto",
-                "& .MuiInputBase-root": {
-                  color: "rgb(156 163 175)",
-                },
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "rgb(107 114 128)",
-                    borderRadius: "16px",
-                    color: "rgb(156 163 175)",
-                  },
-                  "&:hover fieldset": {
-                    color: "rgb(156 163 175)",
-                    borderColor: "rgb(107 114 128)",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "rgb(107 114 128)",
-                    color: "rgb(156 163 175)",
-                  },
-                },
-                "& .MuiInputLabel-root": {
-                  color: "rgb(156 163 175)",
-                },
-                "& .MuiFormHelperText-root": {
-                  color: "rgb(156 163 175)",
-                },
-              }}
-            >
-              <TextField
-                {...register("name", { required: "Name is required" })}
-                label="Name"
-                variant="outlined"
-                error={!!errors.name}
-                helperText={errors.name ? errors.name.message : ""}
-                fullWidth
-              />
-
-              <TextField
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                    message: "Invalid email address",
-                  },
-                })}
-                label="Email"
-                variant="outlined"
-                error={!!errors.email}
-                helperText={errors.email ? errors.email.message : ""}
-                fullWidth
-              />
-
-              <TextField
-                {...register("message", { required: "Message is required" })}
-                label="Message"
-                variant="outlined"
-                multiline
-                rows={4}
-                error={!!errors.message}
-                helperText={errors.message ? errors.message.message : ""}
-                fullWidth
-              />
-
-              <button
-                type="submit"
-                className="bg-[#FCC201] text-black font-semibold rounded-2xl py-4 mt-3"
-              >
-                Send Message
-              </button>
-            </Box>
-          </Grid>
-          <Grid
-            item
-            md={6}
-            xs={12}
-            className="flex items-center justify-center "
-          >
-            <Box className="flex flex-col gap-6 mt-6 md:mt-0">
-              <Box className="flex items-center gap-3">
-                <Box>
-                  <Phone
-                    sx={{
-                      fontSize: { sm: 50, xs: 40 },
-                      fontWeight: 700,
-                    }}
-                    className="bg-[#FCC201] p-2 rounded-full"
-                  />
-                </Box>
-                <Box className="flex flex-col gap-1">
-                  <Typography fontSize={18} className="text-white">
-                    Phone
-                  </Typography>
-                  <Typography fontSize={14} className="text-white">
-                    +92 00 000 000
-                  </Typography>
-                </Box>
-              </Box>
-              <Box className="flex items-center gap-3">
-                <Box>
-                  <Mail
-                    sx={{
-                      fontSize: { sm: 50, xs: 40 },
-                      fontWeight: 700,
-                    }}
-                    className="bg-[#FCC201] p-2 rounded-full"
-                  />
-                </Box>
-                <Box className="flex flex-col gap-1">
-                  <Typography fontSize={18} className="text-white">
-                    Mail
-                  </Typography>
-                  <Typography fontSize={14} className="text-white">
-                    devsleader@gmail.com
-                  </Typography>
-                </Box>
-              </Box>
+                <Typography
+                  fontSize={{ sm: 18, xs: 16 }}
+                  className="text-neutral-400"
+                >
+                  Get in touch to discuss your project and explore how to bring
+                  your vision to life.
+                </Typography>
+              </motion.div>
             </Box>
           </Grid>
         </Grid>
+
+        {/* Calendly Integration */}
+        <Box textAlign="center">
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }} // Start with opacity 0 and slightly moved down
+            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }} // Fade in and slide up
+            transition={{ duration: 0.6 }} // Animation duration
+          >
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/devsleader99/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+              style={{ minWidth: "200px", height: "700px" }}
+            ></div>
+          </motion.div>
+        </Box>
       </Box>
     </Box>
   );

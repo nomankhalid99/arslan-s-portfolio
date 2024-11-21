@@ -4,55 +4,56 @@ import { ReactElement } from "react";
 interface DataItem {
     id: number;
     img: string;
-    url: string;
+    // url: string;
   }
 
   export const data: DataItem[] = [
     {
       id: 1,
-      img: "../src/assets/portfolioImgs/3.PNG",
-      url: "https://task-hub-eight.vercel.app/",
+      img: "https://elements-resized.envatousercontent.com/elements-preview-images/94b16b8c-0ed1-41bd-8e4c-07a5e44c4a84?w=1370&cf_fit=scale-down&q=85&format=auto&s=d3d37cef129e206ea9a107c0c32d46c72e62dbecb0ff33e317b8c08beeff8b1c",
+      // url: "https://task-hub-eight.vercel.app/",
     },
     {
       id: 2,
-      img: "../src/assets/portfolioImgs/8.PNG",
-      url: "https://dashboard-mui-two.vercel.app/",
+      img: "https://elements-resized.envatousercontent.com/elements-preview-images/e3625d86-4c4b-44a3-9739-f0c2adcca799?w=1370&cf_fit=scale-down&q=85&format=auto&s=361f72fd36228d16c3b2b68d515852e0b0b6931897c3b76b9147ccfa7d1e979a",
+      // url: "https://car-showcase-iota-lilac.vercel.app/",
     },
+ 
     {
       id: 3,
-      img: "../src/assets/portfolioImgs/10.PNG",
-      url: "https://gym-ts-phi.vercel.app/",
+      img: "https://elements-resized.envatousercontent.com/elements-preview-images/9adda530-67c7-471c-98fb-9eeec219c127?w=1370&cf_fit=scale-down&q=85&format=auto&s=80bead9960ce3b97d076a23bda8622cc9433f6cba4e7e80902649ba1aabdb91c",
+      // url: "https://gym-ts-phi.vercel.app/",
     },
     {
       id: 4,
-      img: "../src/assets/portfolioImgs/7.PNG",
-      url: "https://dashboard-cui.vercel.app/",
+      img: "https://elements-resized.envatousercontent.com/elements-preview-images/c1f68875-e309-465d-88ae-39eb5fa7463d?w=1370&cf_fit=scale-down&q=85&format=auto&s=eee43d66db403341f36e04ebf091cfa786b8b9825a1d1d994dfd917f13f28862",
+      // url: "https://dashboard-cui.vercel.app/",
     },
     {
       id: 5,
-      img: "../src/assets/portfolioImgs/9.PNG",
-      url: "https://car-showcase-iota-lilac.vercel.app/",
+      img: "https://elements-resized.envatousercontent.com/elements-preview-images/feb8e2cb-40b3-49d5-a941-a1efdd39e040?w=1370&cf_fit=scale-down&q=85&format=auto&s=edf2e2a4ef19eaf1a2ac8abf8fba7d8ef9cfb07074f8f46978ea02b5d8f4afd9",
+      // url: "https://dashboard-mui-two.vercel.app/",
     },
     {
       id: 6,
-      img: "../src/assets/portfolioImgs/6.PNG",
-      url: "https://roofing-agency.vercel.app/",
+      img: "https://elements-resized.envatousercontent.com/elements-preview-images/b24cbb2e-8a89-41cf-b570-8e59e7b1a2ac?w=1370&cf_fit=scale-down&q=85&format=auto&s=604d8821d706ebd4f4e19e7e87e47fa4ee5651c7c47a72d9bdee238478417926",
+      // url: "https://roofing-agency.vercel.app/",
     },
-    {
-      id: 7,
-      img: "../src/assets/portfolioImgs/5.PNG",
-      url: "https://emart-mu.vercel.app/",
-    },
-    {
-      id: 8,
-      img: "../src/assets/portfolioImgs/1.PNG",
-      url: "https://e-commerce-website-one-rosy.vercel.app/",
-    },
-    {
-      id: 9,
-      img: "../src/assets/portfolioImgs/2.PNG",
-      url: "https://e-commerce-project-1-nu.vercel.app/",
-    },
+    // {
+    //   id: 7,
+    //   img: "../src/assets/portfolioImgs/5.PNG",
+    //   url: "https://emart-mu.vercel.app/",
+    // },
+    // {
+    //   id: 8,
+    //   img: "../src/assets/portfolioImgs/1.PNG",
+    //   url: "https://e-commerce-website-one-rosy.vercel.app/",
+    // },
+    // {
+    //   id: 9,
+    //   img: "../src/assets/portfolioImgs/2.PNG",
+    //   url: "https://e-commerce-project-1-nu.vercel.app/",
+    // },
   ];
 
 
@@ -218,22 +219,23 @@ interface SkillsData {
     {
       id: 1,
       review:
-        "Working with Arslan was a game-changer for our project. Their expertise in MERN stack development helped us launch a robust and scalable web application ahead of schedule. The attention to detail and commitment to quality were truly impressive. Highly recommended",
+        "The development services provided were a game-changer for our project. The expertise in MERN stack development helped deliver a robust and scalable web application ahead of schedule. The attention to detail and commitment to quality were truly impressive. Highly recommended.",
       name: "Tom Holwater",
     },
     {
       id: 2,
       review:
-        "Arslan exceeded our expectations in every way. They brought our vision to life with a sleek, user-friendly interface and seamless functionality. Their ability to solve complex problems quickly and efficiently was invaluable. A true professional!",
+        "Expectations were exceeded in every way. The vision was brought to life with a sleek, user-friendly interface and seamless functionality. The ability to solve complex problems quickly and efficiently was invaluable. A truly professional service!",
       name: "Jennifer Highpez",
     },
     {
       id: 3,
       review:
-        "We couldn't be happier with the results delivered by Arslan. Their deep knowledge of the MERN stack and innovative approach resulted in a dynamic and engaging web app that has significantly boosted our user engagement. Exceptional work!",
+        "The results delivered have been outstanding. The deep knowledge of the MERN stack and innovative approach resulted in a dynamic and engaging web app that has significantly boosted user engagement. Exceptional work!",
       name: "Britney Swords",
     },
   ];
+  
 
   interface ServicesProps {
     id:number,
