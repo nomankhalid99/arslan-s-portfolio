@@ -3,10 +3,18 @@ import "../../App.css";
 import { services } from "../../data";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Wave2 from '../../assets/wave2.svg'
 
 const Services: React.FC = () => {
   return (
     <Grid id="services" className="py-16 bg-[#0D0D0D]">
+         <Box>
+        <img
+          src={Wave2}
+          className="absolute object-contain -top-30"
+          alt="Waves"
+        />
+      </Box>
       <Box textAlign="center">
         {/* Title Animation */}
         <motion.div

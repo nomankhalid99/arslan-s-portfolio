@@ -6,6 +6,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { useState } from "react";
+import Logo from '../../assets/Logo.png';
 
 const Navbar: React.FC = () => {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
@@ -17,7 +18,7 @@ const Navbar: React.FC = () => {
         <Box display="flex" justifyContent="space-between">
           <Box display="flex" gap={2} alignItems="center">
             <img
-              src="../src/assets/Logo.png"
+              src={Logo}
               className="md:h-[49px] h-[30px]"
               alt="LOGO"
             />

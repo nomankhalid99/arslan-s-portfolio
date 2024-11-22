@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { reviews, testimonialsData } from "../../data";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion"; // Import useInView and motion from Framer Motion
+import Wave4 from '../../assets/wave4.svg'
 
 const Testimonials: React.FC = () => {
   const headingRef = useRef(null);
@@ -18,7 +19,7 @@ const Testimonials: React.FC = () => {
     >
       <Box>
         <img
-          src="../src/assets/wave4.svg"
+          src={Wave4}
           className="absolute object-contain -top-0 "
           alt="Waves"
         />

@@ -13,13 +13,6 @@ const Portfolio: React.FC = () => {
 
   return (
     <Box id="portfolio" className="bg-[#0D0D0D] relative py-16">
-      <Box>
-        <img
-          src="../src/assets/wave2.svg"
-          className="absolute object-contain -top-30"
-          alt="Waves"
-        />
-      </Box>
       <Box className="w-5/6 mx-auto">
         <Grid container spacing={3}>
           <Grid item xs={12}>

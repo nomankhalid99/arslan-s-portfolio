@@ -1,5 +1,28 @@
 import { CallMade, SouthEast } from "@mui/icons-material";
 import { ReactElement } from "react";
+import Img1 from './assets/img1.avif'
+import Img2 from './assets/img2.avif'
+import Img3 from './assets/img3.avif'
+import Img4 from './assets/img4.avif'
+import Img5 from './assets/img5.avif'
+import Img6 from './assets/img6.avif'
+import HTML from './assets/HTML.svg'
+import CSS from './assets/CSS.svg'
+import JS from './assets/JS.svg'
+import TS from './assets/TS.svg'
+import Laravel from './assets/laravel.svg'
+import Mongo from './assets/Mongo.svg'
+import Node from './assets/Node.svg'
+import React from './assets/react.svg'
+import T1 from './assets/T1.svg'
+import T2 from './assets/T2.svg'
+import T3 from './assets/T3.svg'
+import T4 from './assets/T5.svg'
+import T5 from './assets/T5.svg'
+import T6 from './assets/T6.svg'
+import T7 from './assets/T7.svg'
+import T8 from './assets/T8.svg'
+import T9 from './assets/T9.svg'
 
 interface DataItem {
     id: number;
@@ -10,33 +33,33 @@ interface DataItem {
   export const data: DataItem[] = [
     {
       id: 1,
-      img: "https://elements-resized.envatousercontent.com/elements-preview-images/94b16b8c-0ed1-41bd-8e4c-07a5e44c4a84?w=1370&cf_fit=scale-down&q=85&format=auto&s=d3d37cef129e206ea9a107c0c32d46c72e62dbecb0ff33e317b8c08beeff8b1c",
+      img: Img1,
       // url: "https://task-hub-eight.vercel.app/",
     },
     {
       id: 2,
-      img: "https://elements-resized.envatousercontent.com/elements-preview-images/e3625d86-4c4b-44a3-9739-f0c2adcca799?w=1370&cf_fit=scale-down&q=85&format=auto&s=361f72fd36228d16c3b2b68d515852e0b0b6931897c3b76b9147ccfa7d1e979a",
+      img: Img2
       // url: "https://car-showcase-iota-lilac.vercel.app/",
     },
  
     {
       id: 3,
-      img: "https://elements-resized.envatousercontent.com/elements-preview-images/9adda530-67c7-471c-98fb-9eeec219c127?w=1370&cf_fit=scale-down&q=85&format=auto&s=80bead9960ce3b97d076a23bda8622cc9433f6cba4e7e80902649ba1aabdb91c",
+      img: Img3,
       // url: "https://gym-ts-phi.vercel.app/",
     },
     {
       id: 4,
-      img: "https://elements-resized.envatousercontent.com/elements-preview-images/c1f68875-e309-465d-88ae-39eb5fa7463d?w=1370&cf_fit=scale-down&q=85&format=auto&s=eee43d66db403341f36e04ebf091cfa786b8b9825a1d1d994dfd917f13f28862",
+      img: Img4,
       // url: "https://dashboard-cui.vercel.app/",
     },
     {
       id: 5,
-      img: "https://elements-resized.envatousercontent.com/elements-preview-images/feb8e2cb-40b3-49d5-a941-a1efdd39e040?w=1370&cf_fit=scale-down&q=85&format=auto&s=edf2e2a4ef19eaf1a2ac8abf8fba7d8ef9cfb07074f8f46978ea02b5d8f4afd9",
+      img: Img5,
       // url: "https://dashboard-mui-two.vercel.app/",
     },
     {
       id: 6,
-      img: "https://elements-resized.envatousercontent.com/elements-preview-images/b24cbb2e-8a89-41cf-b570-8e59e7b1a2ac?w=1370&cf_fit=scale-down&q=85&format=auto&s=604d8821d706ebd4f4e19e7e87e47fa4ee5651c7c47a72d9bdee238478417926",
+      img: Img6,
       // url: "https://roofing-agency.vercel.app/",
     },
     // {
@@ -67,50 +90,50 @@ interface SkillsData {
  export const skillsData: SkillsData[] = [
     {
       id: 1,
-      img: "../src/assets/skills/HTML.svg",
+      img: HTML,
       percent: "85%",
       name: "HTML",
     },
     {
       id: 2,
-      img: "../src/assets/skills/CSS.svg",
+      img: CSS,
       percent: "90%",
       name: "CSS",
     },
     {
       id: 3,
-      img: "../src/assets/skills/laravel.svg",
+      img: Laravel,
       percent: "75%",
       name: "Laravel",
       
     },
     {
       id: 4,
-      img: "../src/assets/skills/react.svg",
+      img: React,
       percent: "70%",
       name: "React",
     },
     {
       id: 5,
-      img: "../src/assets/skills/Mongo.svg",
+      img: Mongo,
       percent: "75%",
       name: "MongoDB",
     },
     {
       id: 6,
-      img: "../src/assets/skills/Node.svg",
+      img: Node,
       percent: "80%",
       name: "NodeJs",
     },
     {
       id: 7,
-      img: "../src/assets/skills/TS.svg",
+      img: TS,
       percent: "55%",
       name: "Typescript",
     },
     {
       id: 8,
-      img: "../src/assets/skills/JS.svg",
+      img: JS,
       percent: "60%",
       name: "Javascript",
     },
@@ -129,7 +152,7 @@ interface SkillsData {
   export const testimonialsData: TestimonialsProps[] = [
     {
       id: 1,
-      img: "../src/assets/testimonials/T1.svg",
+      img: T1,
       top: 0,
       left: 30,
       bottom: null,
@@ -137,7 +160,7 @@ interface SkillsData {
     },
     {
       id: 2,
-      img: "../src/assets/testimonials/T2.svg",
+      img: T2,
       top: 13,
       left: 11,
       bottom: null,
@@ -145,7 +168,7 @@ interface SkillsData {
     },
     {
       id: 3,
-      img: "../src/assets/testimonials/T3.svg",
+      img: T3,
       top: 43,
       left: 8,
       bottom: null,
@@ -153,7 +176,7 @@ interface SkillsData {
     },
     {
       id: 4,
-      img: "../src/assets/testimonials/T4.svg",
+      img: T4,
       bottom: 8,
       left: 24,
       top: null,
@@ -161,7 +184,7 @@ interface SkillsData {
     },
     {
       id: 5,
-      img: "../src/assets/testimonials/T5.svg",
+      img: T5,
       top: 10,
       right: 13,
       bottom: null,
@@ -169,7 +192,7 @@ interface SkillsData {
     },
     {
       id: 6,
-      img: "../src/assets/testimonials/T6.svg",
+      img: T6,
       top: 35,
       right: 10,
       bottom: null,
@@ -177,7 +200,7 @@ interface SkillsData {
     },
     {
       id: 7,
-      img: "../src/assets/testimonials/T7.svg",
+      img: T7,
       right: 6,
       bottom: 6,
       top: null,
@@ -185,7 +208,7 @@ interface SkillsData {
     },
     {
         id: 8,
-        img: "../src/assets/testimonials/T1.svg",
+        img: T1,
         top: null,
         left: null,
         bottom: 5,
@@ -193,7 +216,7 @@ interface SkillsData {
       },
     {
         id: 9,
-        img: "../src/assets/testimonials/T8.svg",
+        img: T8,
         top: 26,
         left: null,
         bottom: null,
@@ -201,7 +224,7 @@ interface SkillsData {
       },
     {
         id: 10,
-        img: "../src/assets/testimonials/T9.svg",
+        img: T9,
         top: null,
         left: 9,
         bottom: 8,
